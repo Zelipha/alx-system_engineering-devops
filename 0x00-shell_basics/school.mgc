@@ -1,0 +1,2 @@
+#!/bin/bash
+file -C -m <filename>.mgc
