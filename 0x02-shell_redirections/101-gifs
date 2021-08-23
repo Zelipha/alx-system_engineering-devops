@@ -1,0 +1,2 @@
+#!/bib/bash
+find . -type f -name \*.gif -printf | LC_ALL=C sort -f | rev | cut -b 5- | rev
