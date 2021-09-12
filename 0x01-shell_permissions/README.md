@@ -18,5 +18,5 @@ This project covers exersises about shell permissions
 * 13-change_group : changes group owner to holberton for the file hello
 * 14-change_owner_and_group : change owner to betty and group owner to holberton for all files and directories in the working directory
 * 15-symbolic_link_permissions : change file _hello's owner to betty and group owner to holberton
-16-if_only : changes owner of file hello to betty only if it is owned by user guillaume
-100-Star_Wars : play the StarWars IV episode in the terminal
+* 16-if_only : changes owner of file hello to betty only if it is owned by user guillaume
+* 100-Star_Wars : play the StarWars IV episode in the terminal
