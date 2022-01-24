@@ -6,7 +6,7 @@
 **Types of Network**
 * LAN
 
-...Typical usage and geographical size..
+  ...Typical usage and geographical size..
 * WAN
 
 ...Typical usage and geographical size
