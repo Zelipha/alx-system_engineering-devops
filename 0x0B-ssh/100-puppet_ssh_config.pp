@@ -2,5 +2,5 @@
 
 exec { "echo":
   path => "/usr/bin/",
-  command => 'echo "IdentityFile ~/.ssh/school  PassworwordAuthentication  no"'
+  command => 'echo "IdentityFile ~/.ssh/school  PassworwordAuthentication  no" >>  /etc/ssh/ssh_config'
 }
