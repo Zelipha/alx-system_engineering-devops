@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Run Apache on the holbertonschool/265-0 Docker container.
+service apache2 start
