@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-# Install nginx on web server; Nginx should be listening on port 80
-# redirects to another page
-# Have a custom 404 page
-
-#!/usr/bin/env bash
 # Configures an nginx server so that /redirect_me redirects to a new page
 
 sudo apt-get update && sudo apt-get install nginx -y
