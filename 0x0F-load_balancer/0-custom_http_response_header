@@ -17,9 +17,9 @@ config=\
                root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
         server_name _;
+	add_header X-Served-By \$hostname;
         location / {
-		add_header X-Served-By \$hostname;
-                try_files \$uri \$uri/ =404;
+		try_files \$uri \$uri/ =404;
         }
         error_page 404 /404.html;
         location  /404.html {
@@ -31,6 +31,6 @@ config=\
         }
 }"
 
-echo -e "$config" > /etc/nginx/sites-available/default
+echo -e "$config" > /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
