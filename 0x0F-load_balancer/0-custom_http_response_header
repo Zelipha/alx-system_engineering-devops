@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Configures my nginx server and add a custom header
 
-sudo apt-get update && sudo apt-get install nginx -y
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 
 sudo chown -R "$USER":"$USER" /var/www/html/index.nginx-debian.html
 sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/default
