@@ -31,8 +31,8 @@ defaults
         timeout server  50000
 backend myservers
 	balance roundrobin
-	server 1323-web-01 34.139.86.175:80 check
-	server 1323-web-02 3.239.7.133:80 check
+	server 2171-web-01 34.139.86.175:80 check
+	server 2171-web-02 3.239.7.133:80 check
 frontend myfrontend
 	bind :80
 	mode http
