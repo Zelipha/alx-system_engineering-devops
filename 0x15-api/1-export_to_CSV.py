@@ -5,7 +5,7 @@ import requests
 import sys
 
 
-if__name__ == "__main__":
+if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
 
     userid = sys.argv[1]
