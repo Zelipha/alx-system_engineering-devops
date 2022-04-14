@@ -4,38 +4,30 @@ import requests
 import sys
 
 
-def tasks_done(id):
-    '''Script that exports an employee TODO tasks to a csv file
-        Parameters:
-        employee_id: Is an interger representing an employee id.
-    '''
-
-    url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    response = requests.get(url)
-    response_json = response.json()
-    employee_name = response_json["name"]
-
-    url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
-    todos = requests.get(url)
-    todos_json = todos.json()
-    number_tasks = len(todos_json)
-
-    task_compleated = 0
-    task_list = ""
-
-    file_name = "{}.csv".format(id)
-
-    with open(file_name, "a") as fd:
-        for todo in todos_json:
-            completed = todo.get("completed")
-            title = todo.get("title")
-            csv_data = "\"{}\",\"{}\",\"{}\",\"{}\"\n".format(id,
-                                                              employee_name,
-                                                              completed,
-                                                              title
-                                                              )
-            fd.write(csv_data)
-
-
 if __name__ == "__main__":
-    tasks_done(sys.argv[1])
+    url = 'https://jsonplaceholder.typicode.com/'
+
+    userid = sys.argv[1]
+    user = '{}users/{}'.format(url, userid)
+    res = requests.get(user)
+    json_o = res.json()
+    name = json_o.get('username')
+
+    todos = '{}todos?userId={}'.format(url, userid)
+    res = requests.get(todos)
+    tasks = res.json()
+    l_task = []
+    for task in tasks:
+        l_task.append([userid,
+                       name,
+                       task.get('completed'),
+                       task.get('title')])
+
+    filename = '{}.csv'.format(userid)
+    with open(filename, mode='w') as employee_file:
+        employee_writer = csv.writer(employee_file,
+                                     delimiter=',',
+                                     quotechar='"',
+                                     quoting=csv.QUOTE_ALL)
+        for task in l_task:
+            employee_writer.writerow(task)
