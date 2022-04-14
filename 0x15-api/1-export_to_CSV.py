@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """Python script that exports data in CSV format"""
+import csv
 import requests
 import sys
-import csv
 
 
-if __name__ == "__main__":
+if__name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
 
     userid = sys.argv[1]
