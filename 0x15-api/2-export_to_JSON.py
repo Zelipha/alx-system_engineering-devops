@@ -5,35 +5,26 @@ import requests
 import sys
 
 
-def tasks_done(id):
-    '''Script that exports an employee TODO tasks to a json file
-        Parameters:
-        employee_id: Is an interger representing an employee id.
-    '''
-
-    url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    response = requests.get(url)
-    response_json = response.json()
-    employee_name = response_json.get("name")
-
-    url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
-    todos = requests.get(url)
-    todos_json = todos.json()
-    task_list = []
-
-    for task in todos_json:
-        task_dict = {}
-        task_dict["task"] = task.get("title")
-        task_dict["completed"] = task.get("completed")
-        task_dict["username"] = employee_name
-        task_list.append(task_dict)
-
-    todos = {"{}".format(id): task_list}
-
-    file_name = "{}.json".format(id)
-    with open(file_name, "a") as fd:
-        json.dump(todos, fd)
-
-
 if __name__ == "__main__":
-    tasks_done(sys.argv[1])
+    url = 'https://jsonplaceholder.typicode.com/'
+
+    userid = sys.argv[1]
+    user = '{}users/{}'.format(url, userid)
+    res = requests.get(user)
+    json_o = res.json()
+    name = json_o.get('username')
+
+    todos = '{}todos?userId={}'.format(url, userid)
+    res = requests.get(todos)
+    tasks = res.json()
+    l_task = []
+    for task in tasks:
+        dict_task = {"task": task.get('title'),
+                     "completed": task.get('completed'),
+                     "username": name}
+        l_task.append(dict_task)
+
+    d_task = {str(userid): l_task}
+    filename = '{}.json'.format(userid)
+    with open(filename, mode='w') as f:
+        json.dump(d_task, f)
