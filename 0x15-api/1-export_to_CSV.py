@@ -2,6 +2,7 @@
 """Python script that exports data in CSV format"""
 import requests
 import sys
+import csv
 
 
 if __name__ == "__main__":
