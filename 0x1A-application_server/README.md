@@ -1,1 +1,2 @@
 ## 0x1A. Application server
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/9/c7d1ed0a2e10d1b4e9b3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220504%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220504T181600Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c71246f8dd50da732a9e511d0f6d60158f19fbe76900ee2bf5351a783b7403b0" />
